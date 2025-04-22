@@ -1,0 +1,27 @@
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/dashboard">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/dashboard"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            <li><a href="/contact"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+            <li><a href="/customers"><span class="glyphicon glyphicon-briefcase"></span> Customers</a></li>
+            <li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if (user) { %>
+               <li><a href="#">Hola, <%= user %>!</a></li>
+               <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+            <% } else { %>
+               <li><a href="/login">Login</a></li>
+            <% } %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    </header>

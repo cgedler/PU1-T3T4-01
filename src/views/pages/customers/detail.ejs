@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../shared/head'); %>
+<body>
+<%- include('../shared/header'); %>
+<div class="container">
+    <a href="/customers" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <table class="table">
+    <tr>
+        <td><label class="form-label">ID:</label></td><td><%= results.id %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Name:</label></td><td><%= results.name %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Surname:</label></td><td><%= results.surname %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Phone:</label></td><td><%= results.phone %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Email:</label></td><td><%= results.email %></td>
+    <tr>
+    </table>
+</div>
+<%- include('../shared/footer'); %>
+</body>
+</html>

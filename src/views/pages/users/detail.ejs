@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../shared/head'); %>
+<body>
+<%- include('../shared/header'); %>
+<div class="container">
+    <a href="/users" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <table class="table">
+    <tr>
+        <td><label class="form-label">ID:</label></td><td><%= results.id %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Username:</label></td><td><%= results.username %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Name:</label></td><td><%= results.name %></td>
+    </tr>
+    <tr>
+        <td><label class="form-label">Role:</label></td><td><%= results.role %></td>
+    <tr>
+    </table>
+</div>
+<%- include('../shared/footer'); %>
+</body>
+</html>

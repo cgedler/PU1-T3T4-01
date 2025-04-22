@@ -1,0 +1,13 @@
+{
+    "name": "cge",
+    "database": {
+        "name" : "ejemplo01",
+        "username" : "prueba",
+        "password" : "123456",
+        "host": "ASUS/SQL2014",
+        "port": 1433,
+        "dialect": "mssql",
+        "encrypt": false,
+        "storage": "path"
+    }
+}

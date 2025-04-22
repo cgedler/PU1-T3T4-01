@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../shared/head'); %>
+<body>
+<%- include('../shared/header'); %>
+<div class="container">
+<form method="POST" action="/customers">
+
+    <!-- Name input -->
+    <div class="form-group">
+        <input name="name" id="name" type="text" class="form-control" />
+        <label class="form-label">Name</label>
+    </div>
+
+    <!-- SurName input -->
+    <div class="form-group">
+        <input name="surname" id="surname" type="text" class="form-control" />
+        <label class="form-label">Surname</label>
+    </div>
+
+    <!-- Phone input -->
+    <div class="form-group">
+        <input name="phone" id="phone" type="text" class="form-control" />
+        <label class="form-label">Phone</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-group">
+        <input name="email" id="email" type="text" class="form-control" />
+        <label class="form-label">Email</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+<%- include('../shared/footer'); %>
+</body>
+</html>

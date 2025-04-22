@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../shared/head'); %>
+<body>
+<%- include('../shared/header'); %>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#myTable').DataTable();
+$('.alert').alert()
+$('[data-toggle="tooltip"]').tooltip();
+});
+function eliminar() {
+  var x = confirm("Vas a eliminar un registro. ¡Estás seguro?!");
+  if (x)
+    return true;
+  else
+    return false;
+}
+</script>
+    <div class="container">
+    <% if (message) { %>
+        <% if (message=='create') { %>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong><span class="glyphicon glyphicon-ok"></span> Success!</strong> New record created.
+        </div>
+        <% } %>
+        <% if (message=='update') { %>
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong><span class="glyphicon glyphicon-refresh"></span> Info!</strong> Registration data updated.
+        </div>
+        <% } %>
+        <% if (message=='delete') { %>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong><span class="glyphicon glyphicon-remove"></span> Warning!</strong> Deleted record.
+        </div>
+        <% } %>
+    <% } %>
+    <div class="row">
+        <a class="btn btn-sm btn-default" href="/customers/create"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+          <h2 class="sub-header">Listado de Clientes</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                  <th>SURNAME</th>
+                  <th>PHONE</th>
+                  <th>EMAIL</th>
+                  <th>ACTIONS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% results.forEach((customer, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= customer.name %></td>
+                    <td><%= customer.surname %></td>
+                    <td><%= customer.phone %></td>
+                    <td><%= customer.email %></td>
+                    <td>
+                        <a href="/customers/<%= customer.id %>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a href="/customers/<%= customer.id %>/edit" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <form action="/customers/<%= customer.id %>/delete" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return eliminar();"><span class="glyphicon glyphicon-trash"></span></button>
+                        </form>
+                    </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+          </div>
+
+    </div>
+<%- include('../shared/footer'); %>
+</body>
+</html>

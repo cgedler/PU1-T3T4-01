@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../shared/head'); %>
+<body>
+<%- include('../shared/header'); %>
+<div class="container">
+<form method="POST" action="/users">
+    <!-- Email input -->
+    <div class="form-group">
+        <input name="username" id="username" type="email" class="form-control" />
+        <label class="form-label">Email address</label>
+    </div>
+
+    <!-- Name input -->
+    <div class="form-group">
+        <input name="name" id="name" type="text" class="form-control" />
+        <label class="form-label">Name</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-group">
+        <input name="password" id="password" type="password" class="form-control" />
+        <label class="form-label">Password</label>
+    </div>
+
+    <!-- Role input -->
+    <div class="form-group">
+        <input name="role" id="role" type="text" class="form-control" />
+        <label class="form-label">Role</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+<%- include('../shared/footer'); %>
+</body>
+</html>
